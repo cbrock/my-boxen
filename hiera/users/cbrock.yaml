@@ -1,0 +1,7 @@
+# includes Node 4.0
+"nodejs::build::ensure": "80cb791b63debce35110b55590cf3b9f953d72db"
+
+"nodejs::version::alias":
+  "0.12": "0.12.7"
+
+"node_global_version": "4.0.0"
