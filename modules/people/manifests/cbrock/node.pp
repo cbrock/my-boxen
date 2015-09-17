@@ -9,18 +9,18 @@ class people::cbrock::node {
   npm_module { "bower for ${nodejs::global::version}":
     module       => 'bower',
     ensure       => 'present',
-    node_version => "${nodejs::global::version}"
+    node_version => $version
   }
 
   npm_module { "phantomjs for ${nodejs::global::version}":
     module       => 'phantomjs',
     ensure       => 'present',
-    node_version => "${nodejs::global::version}"
+    node_version => $version
   }
 
   npm_module { "ember-cli for ${nodejs::global::version}":
     module       => 'ember-cli',
     ensure       => 'present',
-    node_version => "${nodejs::global::version}"
+    node_version => $version
   }
 }
