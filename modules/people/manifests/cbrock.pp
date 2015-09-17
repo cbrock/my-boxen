@@ -1,6 +1,7 @@
 class people::cbrock {
   notify { "doing cbrock's bidding": }
 
+  include people::cbrock::shell
   include people::cbrock::apps
   include people::cbrock::brew
   include people::cbrock::node

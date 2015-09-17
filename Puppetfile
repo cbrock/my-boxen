@@ -67,3 +67,5 @@ github "xquartz",     "1.2.1"
 # github "sysctl",      "1.0.1"
 
 github "osx",         "2.8.0", :repo => "cbrock/puppet-osx"
+github "zsh",         "1.0.0"
+github "ohmyzsh",     "1.0.0", :repo => "erivello/puppet-ohmyzsh"
