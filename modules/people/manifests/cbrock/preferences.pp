@@ -18,16 +18,8 @@ class people::cbrock::preferences {
   include osx::finder::show_hidden_files
   include osx::finder::enable_quicklook_text_selection
   include osx::finder::show_all_filename_extensions
-  class osx::finder::hide_desktop_icons {
-    boxen::osx_defaults { 'Hide Desktop icons':
-      user   => $::boxen_user,
-      key    => 'CreateDesktop',
-      domain => 'com.apple.finder',
-      value  => false,
-      notify => Exec['killall Finder']
-    }
-  }
-  include osx::finder::hide_desktop_icons
+  # uncomment after releasing new version of cbrock/puppet-osx
+  # include osx::finder::hide_icons_on_desktop
   
   ## safari settings
   include osx::safari::enable_developer_mode
