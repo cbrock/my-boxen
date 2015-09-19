@@ -1,19 +1,17 @@
 class people::cbrock::preferences {
-  # osx
-  
-  ## global settings
+  # global settings
   include osx::global::expand_print_dialog
   include osx::global::expand_save_dialog
   include osx::global::disable_autocorrect
   include osx::global::tap_to_click
   
-  ## dock settings
+  # dock settings
   include osx::dock::2d
   include osx::dock::autohide
   include osx::dock::clear_dock
   include osx::dock::dim_hidden_apps
   
-  ## finder settings
+  # finder settings
   include osx::finder::unhide_library
   include osx::finder::show_hidden_files
   include osx::finder::enable_quicklook_text_selection
@@ -21,14 +19,13 @@ class people::cbrock::preferences {
   # uncomment after releasing new version of cbrock/puppet-osx
   # include osx::finder::hide_icons_on_desktop
   
-  ## safari settings
+  # safari settings
   include osx::safari::enable_developer_mode
   
-  ## misc settings
+  # misc settings
   include osx::no_network_dsstores # disable creation of .DS_Store files on network shares
   
-  # TODO fork puppet-osx and add stuff a la hide_desktop_icons above
-  # 
+  # TODO
   # disable volume change sound
   # disable sound effects on boot
   # custom wallpaper
