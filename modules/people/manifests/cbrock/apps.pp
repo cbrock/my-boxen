@@ -30,6 +30,7 @@ class people::cbrock::apps {
 
   # sublime text
   ## We're installing via brew cask, but using sublime_text_3::package to install packages
+  $dotfiles_dir = hiera('dotfiles_dir')
 
   # taken from https://github.com/jozefizso/puppet-sublime_text_3/blob/master/manifests/config.pp
   $dir = "/Users/${::boxen_user}/Library/Application Support/Sublime Text 3"
@@ -52,7 +53,7 @@ class people::cbrock::apps {
     ensure  => link,
     mode    => '0644',
     target  => "/Users/${::boxen_user}/dotfiles/Preferences.sublime-settings",
-    require => [Repository["/Users/${::boxen_user}/dotfiles"],
+    require => [Repository["${dotfiles_dir}"],
                 File[$user_packages_dir]]
   }
 
