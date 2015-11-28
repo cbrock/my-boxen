@@ -1,9 +1,9 @@
 # includes Node 4.0
-"nodejs::build::ensure": "80cb791b63debce35110b55590cf3b9f953d72db"
+"nodejs::build::ensure": "c5fac71ef20a85841c7fd76f751ed11e2f8625ec"
 
 "nodejs::version::alias":
   "0.12": "0.12.7"
 
-"node_global_version": "4.0.0"
+"node_global_version": "4.2.2"
 
 "dotfiles_dir": "/Users/%{::boxen_user}/dotfiles"
