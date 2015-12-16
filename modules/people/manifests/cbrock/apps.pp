@@ -28,6 +28,11 @@ class people::cbrock::apps {
     require => Package['google-chrome-canary']
   }
 
+  chrome::canary::extension { 'Ghostery':
+    id      => 'mlomiejdfkolichcflejclcbmpeaniij',
+    require => Package['google-chrome-canary']
+  }
+
   # sublime text
   ## We're installing via brew cask, but using sublime_text_3::package to install packages
   $dotfiles_dir = hiera('dotfiles_dir')
@@ -58,9 +63,9 @@ class people::cbrock::apps {
   }
 
   ## packages
-  
+
   include sublime_text_3::package_control
-  
+
   sublime_text_3::package { 'EditorConfig':
     source => 'sindresorhus/editorconfig-sublime',
     require => Package['sublime-text3']
@@ -77,7 +82,7 @@ class people::cbrock::apps {
   }
 
   ## theme
-  
+
   sublime_text_3::package { 'zenburn' :
     source => 'https://github.com/colinta/zenburn',
     require => Package['sublime-text3']
