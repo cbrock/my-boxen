@@ -12,31 +12,31 @@ class people::cbrock::preferences {
   # disable sound effects on boot
   # TODO osx seems to reset this value: https://github.com/mathiasbynens/dotfiles/issues/517
   # sudo nvram SystemAudioVolume=%00;
-  
+
   # dock settings
   include osx::dock::2d
   include osx::dock::autohide
   include osx::dock::clear_dock
   include osx::dock::dim_hidden_apps
-  
+
   # finder settings
   include osx::finder::unhide_library
   include osx::finder::show_hidden_files
   include osx::finder::enable_quicklook_text_selection
   include osx::finder::show_all_filename_extensions
   include osx::finder::hide_icons_on_desktop
+  include osx::finder::empty_trash_securely
+  include osx::finder::search_current_folder
+  include osx::finder::use_column_view
 
   # safari settings
   include osx::safari::enable_developer_mode
-  
+
   # misc settings
   include osx::no_network_dsstores # disable creation of .DS_Store files on network shares
-  
+
   # TODO
-  # https://github.com/cbrock/old-dotfiles/blob/master/osx.sh
-   
-  # custom wallpaper
-   
+
   # check for software updates daily
   # defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1;
 
@@ -45,15 +45,6 @@ class people::cbrock::preferences {
 
   # save screenshots to the desktop
   # defaults write com.apple.screencapture location -string "${HOME}/Desktop";
-
-  # when performing a search, search the current folder by default
-  # defaults write com.apple.finder FXDefaultSearchScope -string "SCcf";
-
-  # Use column view in all Finder windows by default
-  # defaults write com.apple.finder FXPreferredViewStyle -string "clmv"; 
-  
-  # Empty Trash securely by default
-  # defaults write com.apple.finder EmptyTrashSecurely -bool true;
 
   # Use plain text mode for new TextEdit documents
   # defaults write com.apple.TextEdit RichText -int 0;
@@ -77,7 +68,7 @@ class people::cbrock::preferences {
 
   # Prevent Safari from opening ‘safe’ files automatically after downloading
   # defaults write com.apple.Safari AutoOpenSafeDownloads -bool false;
-  
+
   # Don't animate opening applications from the Dock
   # Minimize windows into their application’s icon
   # Wipe all (default) app icons from the Dock
