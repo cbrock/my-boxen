@@ -24,13 +24,8 @@ class people::cbrock::apps {
     require => Package['google-chrome-canary']
   }
 
-  chrome::canary::extension { 'Adblock':
-    id      => 'gighmmpiobklfepjocnamgkkbiglidom',
-    require => Package['google-chrome-canary']
-  }
-
-  chrome::canary::extension { 'Ghostery':
-    id      => 'mlomiejdfkolichcflejclcbmpeaniij',
+  chrome::canary::extension { 'uBlock Origin':
+    id      => 'cjpalhdlnbpafiamejdnhcphjbkeiagm',
     require => Package['google-chrome-canary']
   }
 
