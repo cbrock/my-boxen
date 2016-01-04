@@ -9,15 +9,34 @@ class people::cbrock::preferences {
     enable => false
   }
   include osx::sound::disable_volume_change_sound
-  # disable sound effects on boot
-  # TODO osx seems to reset this value: https://github.com/mathiasbynens/dotfiles/issues/517
+  ## Disable sound effects on boot
+  ## TODO osx seems to reset this value: https://github.com/mathiasbynens/dotfiles/issues/517
   # sudo nvram SystemAudioVolume=%00;
+  #
+  ## Restart automatically if the computer freezes
+  # sudo systemsetup -setrestartfreeze on;
+  #
+  ## Never go into computer sleep mode
+  # sudo systemsetup -setcomputersleep Off > /dev/null;
+  #
+  ## Sleep display after 10 minutes
+  # sudo systemsetup -setdisplaysleep 10
+  #
+  ## Disable smart quotes as they're annoying when typing code
+  # defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false;
 
   # dock settings
   include osx::dock::2d
   include osx::dock::autohide
   include osx::dock::clear_dock
   include osx::dock::dim_hidden_apps
+  include osx::dock::icon_size
+  include osx::dock::disable_dashboard
+  #  include osx::dock::hide_indicator_lights
+  class { 'osx::dock::magnification':
+    magnification => false
+  }
+  # include osx::dock::no_auto_rearrange
 
   # finder settings
   include osx::finder::unhide_library
@@ -79,10 +98,6 @@ class people::cbrock::preferences {
   #   user   => $::boxen_user,
   # }
   # osx::recovery_message { 'If this Mac is found, please call 555-555-5555': }
-
-  # running "Don’t automatically rearrange Spaces based on most recent use"
-  # defaults write com.apple.dock mru-spaces -bool false
-  # TODO other dock-related items
 
   ###############################################################################
   # SSD-specific tweaks                                                         #
