@@ -29,6 +29,15 @@ class people::cbrock::apps {
     require => Package['google-chrome-canary']
   }
 
+  # iterm2
+  exec { 'disable_iterm2_quit_prompt':
+    command => 'defaults write com.googlecode.iterm2 PromptOnQuit -bool false'
+  }
+
+  exec { 'hide_iterm2_title_bars':
+    command => 'defaults write com.googlecode.iterm2 HideTab -bool true'
+  }
+
   # sublime text
   ## We're installing via brew cask, but using sublime_text_3::package to install packages
   $dotfiles_dir = hiera('dotfiles_dir')
