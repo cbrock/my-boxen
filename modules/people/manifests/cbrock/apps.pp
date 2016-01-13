@@ -11,7 +11,6 @@ class people::cbrock::apps {
   package { 'sublime-text3'        : provider => 'brewcask' }
   package { 'firefox-nightly'      : provider => 'brewcask' }
   package { 'google-chrome-canary' : provider => 'brewcask' }
-  package { 'little-snitch'        : provider => 'brewcask' }
 
   # chrome extensions
   chrome::canary::extension { '1Password':
