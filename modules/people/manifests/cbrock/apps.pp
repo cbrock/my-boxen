@@ -12,6 +12,16 @@ class people::cbrock::apps {
   package { 'sublime-text3'        : provider => 'brewcask' }
   package { 'firefox-nightly'      : provider => 'brewcask' }
   package { 'google-chrome-canary' : provider => 'brewcask' }
+  package { 'java'                 : provider => 'brewcask' }
+  package { 'hipchat'              : provider => 'brewcask' }
+  package { 'charles'              : provider => 'brewcask' }
+  package { 'vmware-fusion'        : provider => 'brewcask' }
+  # OSX El Capitan issues installing vagrant via brew cask
+  # More info: https://github.com/boxen/puppet-brewcask/issues/45
+  # Installing via https://github.com/boxen/puppet-vagrant in Puppetfile for now
+  # package { 'vagrant'            : provider => 'brewcask' }
+  include vagrant
+  vagrant::plugin { 'vmware-fusion': }
 
   # chrome extensions
   chrome::canary::extension { '1Password':
