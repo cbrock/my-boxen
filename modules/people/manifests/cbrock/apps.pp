@@ -30,11 +30,13 @@ class people::cbrock::apps {
 
   # iterm2
   exec { 'disable_iterm2_quit_prompt':
-    command => 'defaults write com.googlecode.iterm2 PromptOnQuit -bool false'
+    command => 'defaults write com.googlecode.iterm2 PromptOnQuit -bool false',
+    require => Package['iterm2']
   }
 
   exec { 'hide_iterm2_title_bars':
-    command => 'defaults write com.googlecode.iterm2 HideTab -bool true'
+    command => 'defaults write com.googlecode.iterm2 HideTab -bool true',
+    require => Package['iterm2']
   }
 
   # sublime text
@@ -53,7 +55,7 @@ class people::cbrock::apps {
     $user_packages_dir,
     $installed_packages_dir
   ]:
-    ensure => directory,
+    ensure  => directory,
     require => Package['sublime-text3']
   }
 
@@ -71,7 +73,7 @@ class people::cbrock::apps {
   include sublime_text_3::package_control
 
   sublime_text_3::package { 'EditorConfig':
-    source => 'sindresorhus/editorconfig-sublime',
+    source  => 'sindresorhus/editorconfig-sublime',
     require => Package['sublime-text3']
   }
 
