@@ -22,6 +22,8 @@ class people::cbrock::apps {
   # package { 'vagrant'            : provider => 'brewcask' }
   include vagrant
   vagrant::plugin { 'vmware-fusion': }
+  # TODO: GPG Keychain
+  # https://github.com/caskroom/homebrew-cask/blob/master/Casks/gpgtools.rb
 
   # chrome extensions
   chrome::canary::extension { '1Password':
