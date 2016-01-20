@@ -5,10 +5,12 @@ class people::cbrock::preferences {
   include osx::global::disable_autocorrect
   include osx::global::tap_to_click
   include osx::global::disable_smart_dashes
+  include osx::global::disable_smart_quotes
   class { 'osx::sound::interface_sound_effects':
     enable => false
   }
   include osx::sound::disable_volume_change_sound
+  include osx::sound::mute_beep_volume
   ## Disable sound effects on boot
   ## TODO osx seems to reset this value: https://github.com/mathiasbynens/dotfiles/issues/517
   # sudo nvram SystemAudioVolume=%00;
