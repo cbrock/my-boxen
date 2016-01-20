@@ -22,7 +22,7 @@ class people::cbrock::preferences {
   # sudo systemsetup -setcomputersleep Off > /dev/null;
   #
   ## Sleep display after 10 minutes
-  # sudo pmset displaysleep 10
+  # sudo systemsetup -setdisplaysleep 10
   #
   ## automatic restart on power loss
   # sudo pmset autorestart 1
