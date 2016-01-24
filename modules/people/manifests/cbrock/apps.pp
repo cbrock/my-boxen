@@ -4,6 +4,7 @@ class people::cbrock::apps {
   package { '1password'       : provider => 'brewcask' }
   package { 'the-unarchiver'  : provider => 'brewcask' }
   package { 'evernote'        : provider => 'brewcask' }
+  package { 'shiftit'         : provider => 'brewcask' }
 
   # brew cask versions tap
   homebrew::tap { 'caskroom/versions': }
