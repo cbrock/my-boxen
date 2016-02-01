@@ -39,4 +39,10 @@ class people::cbrock::node {
     version      => '1.13.13',
     node_version => "${nodejs::global::version}"
   }
+
+  npm_module { "jshint for all installed node versions":
+    module       => 'jshint',
+    ensure       => 'present',
+    node_version => '*'
+  }
 }
