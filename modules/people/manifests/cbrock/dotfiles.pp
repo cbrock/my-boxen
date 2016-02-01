@@ -5,6 +5,14 @@ class people::cbrock::dotfiles {
     source => 'cbrock/dotfiles',
   }
 
+  file { "/Users/${::boxen_user}/.vimrc":
+    ensure  => link,
+    target  => "${dotfiles_dir}/.vimrc",
+    require => [
+      Repository[$dotfiles_dir]
+    ]
+  }
+
   # TODO: create homebrew formula or something for the following
 
   file { "/Users/${::boxen_user}/bin" :
