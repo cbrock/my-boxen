@@ -20,7 +20,21 @@ class people::cbrock::preferences {
   # sudo systemsetup -setcomputersleep Off > /dev/null;
   #
   ## Sleep display after 10 minutes
-  # sudo systemsetup -setdisplaysleep 10
+  # sudo pmset displaysleep 10
+  #
+  ## automatic restart on power loss
+  # sudo pmset autorestart 1
+  #
+  ## prevent hard disks from going to sleep
+  # sudo pmset disksleep 0
+  #
+  ## require password after display sleep
+  #  defaults read com.apple.screensaver
+  #  {
+  #    askForPassword = 1;
+  #    askForPasswordDelay = 300;
+  #    tokenRemovalAction = 0;
+  #  }
   #
   ## Disable smart quotes as they're annoying when typing code
   # defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false;
