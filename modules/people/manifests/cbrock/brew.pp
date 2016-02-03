@@ -6,4 +6,5 @@ class people::cbrock::brew {
   package { 'postgres' : provider => 'homebrew' }
   package { 'todo-txt' : provider => 'homebrew' }
   package { 'ngrok' : provider => 'homebrew' }
+  package { 'jq' : provider => 'homebrew' }
 }
