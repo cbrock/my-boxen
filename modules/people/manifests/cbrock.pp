@@ -4,5 +4,6 @@ class people::cbrock {
   include people::cbrock::node
   include people::cbrock::brew
   include people::cbrock::apps
-  include people::cbrock::preferences  
+  include people::cbrock::preferences
+  include people::cbrock::emacs
 }
