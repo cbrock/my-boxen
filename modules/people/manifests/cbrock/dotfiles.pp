@@ -32,6 +32,14 @@ class people::cbrock::dotfiles {
     ]
   }
 
+  file { "/Users/${::boxen_user}/.spacemacs":
+    ensure  => link,
+    target  => "${dotfiles_dir}/.spacemacs",
+    require => [
+      Repository[$dotfiles_dir]
+    ]
+  }
+
   # TODO: create homebrew formula or something for the following
 
   file { "/Users/${::boxen_user}/bin" :
