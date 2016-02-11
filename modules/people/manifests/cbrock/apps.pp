@@ -64,7 +64,7 @@ class people::cbrock::apps {
   file { "${user_packages_dir}/Preferences.sublime-settings" :
     ensure  => link,
     mode    => '0644',
-    target  => "/Users/${::boxen_user}/dotfiles/Preferences.sublime-settings",
+    target  => "${dotfiles_dir}/Preferences.sublime-settings",
     require => [Repository["${dotfiles_dir}"],
                 File[$user_packages_dir]]
   }
