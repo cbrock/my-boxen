@@ -10,7 +10,7 @@ class people::cbrock::apps {
   homebrew::tap { 'caskroom/versions': }
 
   package { 'sublime-text3'        : provider => 'brewcask' }
-  package { 'firefox-nightly'      : provider => 'brewcask' }
+  package { 'firefox'              : provider => 'brewcask' }
   package { 'google-chrome-canary' : provider => 'brewcask' }
 
   # chrome extensions
