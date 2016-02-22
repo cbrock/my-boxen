@@ -1,5 +1,5 @@
 class people::cbrock::apps {
-  package { 'iterm2'          : provider => 'brewcask' }
+  package { 'iterm2-beta'     : provider => 'brewcask' }
   package { 'alfred'          : provider => 'brewcask' }
   package { '1password'       : provider => 'brewcask' }
   package { 'the-unarchiver'  : provider => 'brewcask' }
@@ -10,7 +10,7 @@ class people::cbrock::apps {
   homebrew::tap { 'caskroom/versions': }
 
   package { 'sublime-text3'        : provider => 'brewcask' }
-  package { 'firefox-nightly'      : provider => 'brewcask' }
+  package { 'firefox'              : provider => 'brewcask' }
   package { 'google-chrome-canary' : provider => 'brewcask' }
   package { 'java'                 : provider => 'brewcask' }
   package { 'hipchat'              : provider => 'brewcask' }
@@ -44,12 +44,12 @@ class people::cbrock::apps {
   # iterm2
   exec { 'disable_iterm2_quit_prompt':
     command => 'defaults write com.googlecode.iterm2 PromptOnQuit -bool false',
-    require => Package['iterm2']
+    require => Package['iterm2-beta']
   }
 
   exec { 'hide_iterm2_title_bars':
     command => 'defaults write com.googlecode.iterm2 HideTab -bool true',
-    require => Package['iterm2']
+    require => Package['iterm2-beta']
   }
 
   # sublime text
