@@ -44,11 +44,6 @@ GITHUBTARBALL
     hub (1.4.1)
 
 GITHUBTARBALL
-  remote: boxen/puppet-nginx
-  specs:
-    nginx (1.6.0)
-
-GITHUBTARBALL
   remote: boxen/puppet-nodejs
   specs:
     nodejs (5.0.0)
@@ -57,11 +52,6 @@ GITHUBTARBALL
   remote: boxen/puppet-openssl
   specs:
     openssl (1.0.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-phantomjs
-  specs:
-    phantomjs (3.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-pkgconfig
@@ -84,9 +74,34 @@ GITHUBTARBALL
     sudo (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-vagrant
+  specs:
+    vagrant (3.3.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-xquartz
   specs:
     xquartz (1.2.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-zsh
+  specs:
+    zsh (1.0.0)
+
+GITHUBTARBALL
+  remote: cbrock/puppet-osx
+  specs:
+    osx (2.11.0)
+
+GITHUBTARBALL
+  remote: erivello/puppet-ohmyzsh
+  specs:
+    ohmyzsh (1.0.0)
+
+GITHUBTARBALL
+  remote: jozefizso/puppet-sublime_text_3
+  specs:
+    sublime_text_3 (1.0.3)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -115,14 +130,17 @@ DEPENDENCIES
   hub (= 1.4.1)
   inifile (= 1.4.1)
   module_data (= 0.0.4)
-  nginx (= 1.6.0)
   nodejs (= 5.0.0)
+  ohmyzsh (= 1.0.0)
   openssl (= 1.0.0)
-  phantomjs (= 3.0.0)
+  osx (= 2.11.0)
   pkgconfig (= 1.0.0)
   repository (= 2.4.1)
   ruby (= 8.5.4)
   stdlib (= 4.7.0)
+  sublime_text_3 (= 1.0.3)
   sudo (= 1.0.0)
+  vagrant (= 3.3.0)
   xquartz (= 1.2.1)
+  zsh (= 1.0.0)
 
