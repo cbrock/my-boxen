@@ -1,4 +1,6 @@
 class people::cbrock::apps {
+  $dotfiles_dir = hiera('dotfiles_dir')
+
   package { 'iterm2-beta'     : provider => 'brewcask' }
   package { 'alfred'          : provider => 'brewcask' }
   package { '1password'       : provider => 'brewcask' }
@@ -30,19 +32,27 @@ class people::cbrock::apps {
   }
 
   # iterm2
-  exec { 'disable_iterm2_quit_prompt':
-    command => 'defaults write com.googlecode.iterm2 PromptOnQuit -bool false',
+  file { "/Users/${::boxen_user}/com.googlecode.iterm2.plist" :
+    ensure  => link,
+    mode    => '0644',
+    target  => "${dotfiles_dir}/com.googlecode.iterm2.plist",
+    require => [Repository["${dotfiles_dir}"],
+                Package['iterm2-beta']]
+  }
+
+  exec { 'iterm2_load_prefs':
+    command => 'defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true',
     require => Package['iterm2-beta']
   }
 
-  exec { 'hide_iterm2_title_bars':
-    command => 'defaults write com.googlecode.iterm2 HideTab -bool true',
-    require => Package['iterm2-beta']
+  exec { 'iterm2_prefs_custom_folder':
+    command => "defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -string /Users/${::boxen_user}/",
+    require => [Package['iterm2-beta'],
+                Exec['iterm2_load_prefs']]
   }
 
   # sublime text
   ## We're installing via brew cask, but using sublime_text_3::package to install packages
-  $dotfiles_dir = hiera('dotfiles_dir')
 
   # taken from https://github.com/jozefizso/puppet-sublime_text_3/blob/master/manifests/config.pp
   $dir = "/Users/${::boxen_user}/Library/Application Support/Sublime Text 3"
@@ -64,7 +74,7 @@ class people::cbrock::apps {
   file { "${user_packages_dir}/Preferences.sublime-settings" :
     ensure  => link,
     mode    => '0644',
-    target  => "/Users/${::boxen_user}/dotfiles/Preferences.sublime-settings",
+    target  => "${dotfiles_dir}/Preferences.sublime-settings",
     require => [Repository["${dotfiles_dir}"],
                 File[$user_packages_dir]]
   }
