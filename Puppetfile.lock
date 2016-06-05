@@ -26,7 +26,11 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-git
   specs:
+<<<<<<< HEAD
     git (2.8.0)
+=======
+    git (2.8.1)
+>>>>>>> boxen/master
 
 GITHUBTARBALL
   remote: boxen/puppet-go
@@ -44,6 +48,14 @@ GITHUBTARBALL
     hub (1.4.1)
 
 GITHUBTARBALL
+<<<<<<< HEAD
+=======
+  remote: boxen/puppet-nginx
+  specs:
+    nginx (1.7.0)
+
+GITHUBTARBALL
+>>>>>>> boxen/master
   remote: boxen/puppet-nodejs
   specs:
     nodejs (5.0.0)
@@ -119,12 +131,20 @@ DEPENDENCIES
   dnsmasq (= 2.0.1)
   foreman (= 1.2.0)
   gcc (= 3.0.2)
+<<<<<<< HEAD
   git (= 2.8.0)
+=======
+  git (= 2.8.1)
+>>>>>>> boxen/master
   go (= 2.1.0)
   homebrew (= 2.0.2)
   hub (= 1.4.1)
   inifile (= 1.4.1)
   module_data (= 0.0.4)
+<<<<<<< HEAD
+=======
+  nginx (= 1.7.0)
+>>>>>>> boxen/master
   nodejs (= 5.0.0)
   ohmyzsh (= 1.0.0)
   openssl (= 1.0.0)
