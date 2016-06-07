@@ -48,7 +48,7 @@ class people::cbrock::dotfiles {
 
   file { "/Users/${::boxen_user}/bin/nw" :
     ensure  => link,
-    target  => "${dotfiles_dir}/nw",
+    target  => "/Users/${::boxen_user}/dotfiles/nw",
     require => [Repository["${dotfiles_dir}"],
                 File["/Users/${::boxen_user}/bin"]]
   }

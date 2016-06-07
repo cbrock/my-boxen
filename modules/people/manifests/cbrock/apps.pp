@@ -58,7 +58,7 @@ class people::cbrock::apps {
   }
 
   exec { 'iterm2_prefs_custom_folder':
-    command => "defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -string /Users/${::boxen_user}/",
+    command => "defaults write com.googlecode.iterm2 PrefsCustomFolder -string /Users/${::boxen_user}/",
     require => [Package['iterm2-beta'],
                 Exec['iterm2_load_prefs']]
   }
