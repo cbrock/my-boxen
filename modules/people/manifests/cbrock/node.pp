@@ -6,14 +6,14 @@ class people::cbrock::node {
   # nodejs::version { '0.8': }
   # nodejs::version { '0.10': }
   nodejs::version { '0.12.7': }
-  nodejs::version { '4.3.1': }
-  nodejs::version { '5.3.0': }
+  nodejs::version { '4.4.1': }
+  nodejs::version { '5.12.0': }
 
   # See all available versions with `nodenv install --list'
   # If the version you need is missing, try upgrading node-build:
   # `cd /opt/boxen/node-build && git pull && cd -`
   class { 'nodejs::global':
-    version => '4.3.1'
+    version => '4.4.1'
   }
 
   npm_module { "npm for all installed node versions":
@@ -29,7 +29,7 @@ class people::cbrock::node {
   }
 
   npm_module { "phantomjs for installed node versions":
-    module       => 'phantomjs',
+    module       => 'phantomjs-prebuilt',
     ensure       => 'present',
     node_version => '*'
   }
@@ -39,7 +39,7 @@ class people::cbrock::node {
   npm_module { "ember-cli for ${nodejs::global::version}":
     module       => 'ember-cli',
     ensure       => 'present',
-    version      => '1.13.13',
+    version      => '2.6.2',
     node_version => "${nodejs::global::version}"
   }
 
