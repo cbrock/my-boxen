@@ -42,13 +42,12 @@ class people::cbrock::apps {
 
   exec { 'iterm2_load_prefs':
     command => 'defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true',
-    require => Package['iterm2-beta']
+    require => File["/Users/${::boxen_user}/com.googlecode.iterm2.plist"]
   }
 
   exec { 'iterm2_prefs_custom_folder':
     command => "defaults write com.googlecode.iterm2 PrefsCustomFolder -string /Users/${::boxen_user}/",
-    require => [Package['iterm2-beta'],
-                Exec['iterm2_load_prefs']]
+    require => Exec['iterm2_load_prefs']
   }
 
   # sublime text
