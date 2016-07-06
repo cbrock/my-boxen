@@ -11,7 +11,7 @@ class people::cbrock::apps {
   # brew cask versions tap
   homebrew::tap { 'caskroom/versions': }
 
-  package { 'sublime-text3'        : provider => 'brewcask' }
+  package { 'sublime-text'        : provider => 'brewcask' }
   package { 'firefox'              : provider => 'brewcask' }
   package { 'google-chrome-canary' : provider => 'brewcask' }
 
@@ -67,7 +67,7 @@ class people::cbrock::apps {
     $installed_packages_dir
   ]:
     ensure  => directory,
-    require => Package['sublime-text3']
+    require => Package['sublime-text']
   }
 
   ## settings
@@ -85,23 +85,23 @@ class people::cbrock::apps {
 
   sublime_text_3::package { 'EditorConfig':
     source  => 'sindresorhus/editorconfig-sublime',
-    require => Package['sublime-text3']
+    require => Package['sublime-text']
   }
 
   sublime_text_3::package { 'Emmet':
     source => 'sergeche/emmet-sublime',
-    require => Package['sublime-text3']
+    require => Package['sublime-text']
   }
 
   sublime_text_3::package { 'SublimePuppet':
     source => 'russCloak/SublimePuppet',
-    require => Package['sublime-text3']
+    require => Package['sublime-text']
   }
 
   ## theme
 
   sublime_text_3::package { 'zenburn' :
     source => 'https://github.com/colinta/zenburn',
-    require => Package['sublime-text3']
+    require => Package['sublime-text']
   }
 }
