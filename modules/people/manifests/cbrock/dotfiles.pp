@@ -5,6 +5,14 @@ class people::cbrock::dotfiles {
     source => 'cbrock/dotfiles',
   }
 
+  file { "/Users/${::boxen_user}/.gitconfig":
+    ensure  => link,
+    target  => "${dotfiles_dir}/.gitconfig",
+    require => [
+      Repository[$dotfiles_dir]
+    ]
+  }
+
   file { "/Users/${::boxen_user}/.vimrc":
     ensure  => link,
     target  => "${dotfiles_dir}/.vimrc",
