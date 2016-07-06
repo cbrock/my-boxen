@@ -6,6 +6,7 @@ class people::cbrock::preferences {
   include osx::global::tap_to_click
   include osx::global::disable_smart_dashes
   include osx::global::disable_smart_quotes
+  include osx::global::key_repeat_rate
   class { 'osx::sound::interface_sound_effects':
     enable => false
   }
