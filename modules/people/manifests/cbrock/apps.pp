@@ -1,7 +1,7 @@
 class people::cbrock::apps {
   $dotfiles_dir = hiera('dotfiles_dir')
 
-  package { 'iterm2-beta'     : provider => 'brewcask' }
+  package { 'iterm2'          : provider => 'brewcask' }
   package { 'alfred'          : provider => 'brewcask' }
   package { '1password'       : provider => 'brewcask' }
   package { 'the-unarchiver'  : provider => 'brewcask' }
@@ -37,7 +37,7 @@ class people::cbrock::apps {
     mode    => '0644',
     target  => "${dotfiles_dir}/com.googlecode.iterm2.plist",
     require => [Repository["${dotfiles_dir}"],
-                Package['iterm2-beta']]
+                Package['iterm2']]
   }
 
   exec { 'iterm2_load_prefs':
