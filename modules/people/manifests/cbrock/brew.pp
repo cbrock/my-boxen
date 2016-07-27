@@ -5,15 +5,15 @@ class people::cbrock::brew {
     require => Package['vim']
   }
 
-  package { 'vim'      : provider => 'homebrew' }
-  package { 'tree'     : provider => 'homebrew' }
-  package { 'watchman' : provider => 'homebrew' }
+  package { 'vim'       : provider => 'homebrew' }
+  package { 'tree'      : provider => 'homebrew' }
+  package { 'watchman'  : provider => 'homebrew' }
   package { 'leiningen' : provider => 'homebrew' }
-  package { 'postgres' : provider => 'homebrew' }
-  package { 'todo-txt' : provider => 'homebrew' }
-  package { 'ngrok' : provider => 'homebrew' }
-  package { 'jq' : provider => 'homebrew' }
-  package { 'httpie'   : provider => 'homebrew' }
+  package { 'postgres'  : provider => 'homebrew' }
+  package { 'todo-txt'  : provider => 'homebrew' }
+  package { 'ngrok'     : provider => 'homebrew' }
+  package { 'jq'        : provider => 'homebrew' }
+  package { 'httpie'    : provider => 'homebrew' }
   package { 'gettext'   : provider => 'homebrew' }
  
   # gettext is keg-only and so not symlinked
