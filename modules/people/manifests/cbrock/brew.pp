@@ -14,6 +14,7 @@ class people::cbrock::brew {
   package { 'ngrok'     : provider => 'homebrew' }
   package { 'jq'        : provider => 'homebrew' }
   package { 'httpie'    : provider => 'homebrew' }
+  package { 'ag'        : provider => 'homebrew' }
   package { 'gettext'   : provider => 'homebrew' }
  
   # gettext is keg-only and so not symlinked
