@@ -11,7 +11,6 @@ class people::cbrock::brew {
   package { 'leiningen' : provider => 'homebrew' }
   package { 'postgres'  : provider => 'homebrew' }
   package { 'todo-txt'  : provider => 'homebrew' }
-  package { 'ngrok'     : provider => 'homebrew' }
   package { 'jq'        : provider => 'homebrew' }
   package { 'httpie'    : provider => 'homebrew' }
   package { 'ag'        : provider => 'homebrew' }
