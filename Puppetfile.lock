@@ -149,3 +149,4 @@ DEPENDENCIES
   vagrant (= 3.3.4)
   xquartz (= 1.2.1)
   zsh (= 1.0.0)
+
