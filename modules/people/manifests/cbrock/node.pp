@@ -16,19 +16,19 @@ class people::cbrock::node {
     version => '6.9.1'
   }
 
-  npm_module { "npm for all installed node versions":
+  npm_module { "npm for node v${nodejs::global::version}":
     module       => 'npm',
     ensure       => 'present',
     node_version => "${nodejs::global::version}"
   }
 
-  npm_module { "bower for all installed node versions":
+  npm_module { "bower for node v${nodejs::global::version}":
     module       => 'bower',
     ensure       => 'present',
     node_version => "${nodejs::global::version}"
   }
 
-  npm_module { "phantomjs for installed node versions":
+  npm_module { "phantomjs for node v${nodejs::global::version}":
     module       => 'phantomjs-prebuilt',
     ensure       => 'present',
     node_version => "${nodejs::global::version}"
@@ -36,14 +36,14 @@ class people::cbrock::node {
 
   # installation of ember-cli for node version 5.x.x seems to fail,
   # so only install for default global node version
-  npm_module { "ember-cli for ${nodejs::global::version}":
+  npm_module { "ember-cli for node v${nodejs::global::version}":
     module       => 'ember-cli',
     ensure       => 'present',
     # version      => '2.6.2',
     node_version => "${nodejs::global::version}"
   }
 
-  npm_module { "jshint for all installed node versions":
+  npm_module { "jshint for node v${nodejs::global::version}":
     module       => 'jshint',
     ensure       => 'present',
     node_version => "${nodejs::global::version}"
