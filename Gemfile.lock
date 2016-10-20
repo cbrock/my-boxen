@@ -36,7 +36,7 @@ GEM
       json
       librarian (>= 0.1.2)
     metaclass (0.0.4)
-    mocha (1.1.0)
+    mocha (1.2.1)
       metaclass (~> 0.0.1)
     multi_json (1.12.1)
     multipart-post (2.0.0)
@@ -59,7 +59,7 @@ GEM
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
       rspec-mocks (~> 3.5.0)
-    rspec-core (3.5.3)
+    rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
