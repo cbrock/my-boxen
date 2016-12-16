@@ -8,9 +8,6 @@ class people::cbrock::apps {
   package { 'evernote'        : provider => 'brewcask' }
   package { 'shiftit'         : provider => 'brewcask' }
 
-  # brew cask versions tap
-  homebrew::tap { 'caskroom/versions': }
-
   package { 'sublime-text'        : provider => 'brewcask' }
   package { 'firefox'              : provider => 'brewcask' }
   package { 'google-chrome-canary' : provider => 'brewcask' }
