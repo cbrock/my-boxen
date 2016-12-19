@@ -1,35 +1,18 @@
 class people::cbrock::apps {
   $dotfiles_dir = hiera('dotfiles_dir')
 
-  package { 'iterm2'          : provider => 'brewcask' }
-  package { 'alfred'          : provider => 'brewcask' }
-  package { '1password'       : provider => 'brewcask' }
-  package { 'the-unarchiver'  : provider => 'brewcask' }
-  package { 'evernote'        : provider => 'brewcask' }
-  package { 'shiftit'         : provider => 'brewcask' }
+  package { 'iterm2'         : provider => 'brewcask' }
+  package { 'alfred'         : provider => 'brewcask' }
+  package { '1password'      : provider => 'brewcask' }
+  package { 'the-unarchiver' : provider => 'brewcask' }
+  package { 'evernote'       : provider => 'brewcask' }
+  package { 'shiftit'        : provider => 'brewcask' }
 
   # brew cask versions tap
   homebrew::tap { 'caskroom/versions': }
 
-  package { 'sublime-text'        : provider => 'brewcask' }
-  package { 'firefox'              : provider => 'brewcask' }
-  package { 'google-chrome-canary' : provider => 'brewcask' }
-
-  # chrome extensions
-  chrome::canary::extension { '1Password':
-    id      => 'aomjjhallfgjeglblehebfpbcfeobpgk',
-    require => Package['google-chrome-canary']
-  }
-
-  chrome::canary::extension { 'Ember Inspector':
-    id      => 'bmdblncegkenkacieihfhpjfppoconhi',
-    require => Package['google-chrome-canary']
-  }
-
-  chrome::canary::extension { 'uBlock Origin':
-    id      => 'cjpalhdlnbpafiamejdnhcphjbkeiagm',
-    require => Package['google-chrome-canary']
-  }
+  package { 'sublime-text' : provider => 'brewcask' }
+  package { 'firefox'      : provider => 'brewcask' }
 
   # iterm2
   file { "/Users/${::boxen_user}/com.googlecode.iterm2.plist" :
