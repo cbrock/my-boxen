@@ -13,7 +13,7 @@ class people::cbrock::node {
   # If the version you need is missing, try upgrading node-build:
   # `cd /opt/boxen/node-build && git pull && cd -`
   class { 'nodejs::global':
-    version => '4.6.1'
+    version => '6.9.1'
   }
 
   npm_module { "npm for all installed node versions":
