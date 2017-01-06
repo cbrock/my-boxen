@@ -48,4 +48,10 @@ class people::cbrock::node {
     ensure       => 'present',
     node_version => "${nodejs::global::version}"
   }
+
+  npm_module { "jscs for node v${nodejs::global::version}":
+    module       => 'jscs',
+    ensure       => 'present',
+    node_version => "${nodejs::global::version}"
+  }
 }
