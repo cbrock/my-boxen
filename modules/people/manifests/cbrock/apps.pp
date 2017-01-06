@@ -57,8 +57,9 @@ class people::cbrock::apps {
   }
 
   exec { 'iterm2_prefs_custom_folder':
-    command => "defaults write com.googlecode.iterm2 PrefsCustomFolder -string /Users/${::boxen_user}/",
-    require => Exec['iterm2_load_prefs']
+    command => "defaults write com.googlecode.iterm2 PrefsCustomFolder -string ${dotfiles_dir}",
+    require => [Repository["${dotfiles_dir}"],
+                Exec['iterm2_load_prefs']]
   }
 
   # sublime text
