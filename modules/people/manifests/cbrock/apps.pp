@@ -17,6 +17,7 @@ class people::cbrock::apps {
   package { 'vmware-fusion'        : provider => 'brewcask' }
   package { 'intellij-idea'        : provider => 'brewcask' }
   package { 'google-drive'         : provider => 'brewcask' }
+  package { 'blue-jeans-launcher'  : provider => 'brewcask' }
   # OSX El Capitan issues installing vagrant via brew cask
   # More info: https://github.com/boxen/puppet-brewcask/issues/45
   # Installing via https://github.com/boxen/puppet-vagrant in Puppetfile for now
