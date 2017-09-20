@@ -5,15 +5,16 @@ class people::cbrock::node {
   # nodejs::version { '0.6': }
   # nodejs::version { '0.8': }
   # nodejs::version { '0.10': }
-  nodejs::version { '0.12.17': }
-  nodejs::version { '4.8.3': }
-  nodejs::version { '6.10.3': }
+  # nodejs::version { '0.12.17': }
+  nodejs::version { '4.8.4': }
+  nodejs::version { '6.11.3': }
+  nodejs::version { '8.5.0': }
 
   # See all available versions with `nodenv install --list'
   # If the version you need is missing, try upgrading node-build:
   # `cd /opt/boxen/node-build && git pull && cd -`
   class { 'nodejs::global':
-    version => '4.8.3'
+    version => '6.11.3'
   }
 
   npm_module { "npm for node v${nodejs::global::version}":
