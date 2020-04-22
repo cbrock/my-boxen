@@ -10,6 +10,7 @@ jobs:
     name: auto-assign-to-project
     steps:
     - name: Assign new issues to triage board
+      uses: cbrock/my-boxen@master
       if: github.event.action == 'opened'
       with:
         project: 'https://github.com/cbrock/my-boxen/projects/1'
