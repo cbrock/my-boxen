@@ -1,16 +1,18 @@
-name: auto-assign issues to project board
+name: Auto Assign to Project(s)
 
 on:
   issues:
     types: [opened]
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  assign_to_project:
+  assign_one_project:
     runs-on: ubuntu-latest
-    name: auto-assign-to-project
+    name: Assign to One Project
     steps:
-    - name: Assign new issues to triage board
-      uses: cbrock/my-boxen@master
+    - name: Assign NEW issues to project 1
+      uses: srggrs/assign-one-project-github-action@1.2.0
       if: github.event.action == 'opened'
       with:
         project: 'https://github.com/cbrock/my-boxen/projects/1'
