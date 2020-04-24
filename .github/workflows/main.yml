@@ -3,8 +3,6 @@ name: Auto Assign to Project(s)
 on:
   issues:
     types: [opened, labeled]
-  label:
-    types: [created]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
